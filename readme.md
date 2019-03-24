@@ -28,6 +28,17 @@
     
     if __name__ == '__main__':
         app.run()
-   
+
+# 项目结构
+corgiNSFW_flask/   
+&ensp;&ensp;&ensp;&ensp;img/    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;图片存储位置  
+&ensp;&ensp;&ensp;&ensp;pixivBot/  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;bot文件夹  
+&ensp;&ensp;&ensp;&ensp;pixivpy3/  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;爬p站的库  
+&ensp;&ensp;&ensp;&ensp;app.py &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;主程序  
+
+
+# 使用方法
+装好该装的依赖 把pixivpy3文件夹放到python库文件夹里去 然后运行 app.py
+
 # 更新中...
 
