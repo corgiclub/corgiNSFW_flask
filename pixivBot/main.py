@@ -26,7 +26,7 @@ def rank_by_time(api, mode='day_male', num=1):    # (mode, date = None, offset =
                 # address = os.getcwd() + '\\img\\popular_' + str(i) + '.jpg'
                 uuid_name = uuid4().hex
                 api.download(illust.image_urls['large'], path='img/', name=uuid_name + '.jpg')
-                address = os.getcwd() + '/img/' + uuid_name + '.jpg'
+                address = os.getcwd() + '\\img\\' + uuid_name + '.jpg'
                 img_list_out.append(address)
                 # print(illust['total_bookmarks'])
                 # text = '已经收集了' + str(i+1) + '张图！'
@@ -74,7 +74,7 @@ def search_by_tag_popular(word, api, duration=None, num=1, p_num=2):
             word = word.replace(" ", "_")
             uuid_name = uuid4().hex
             api.download(illust.image_urls['large'], path='img/', name=word + '_' + uuid_name + '.jpg')
-            img_list_out.append(os.getcwd() + '/img/' + word + '_' + uuid_name + '.jpg')
+            img_list_out.append(os.getcwd() + '\\img\\' + word + '_' + uuid_name + '.jpg')
         return img_list_out, ''
     except ValueError:
         return [], '没有这个tag相关的图片！'
@@ -143,7 +143,7 @@ def main(text):
         img_lst = []
         if text.startswith('来') and text.endswith('色图'):
             if text.endswith('三次元色图'):
-                url = 'G:/yasuo'
+                url = 'G:\\yasuo'
 
                 if re.search('\d+', text) is None:
                     num = '1'
@@ -155,7 +155,7 @@ def main(text):
                 else:
                     for i in range(int(num)):
                         for root, dirs, files in os.walk(url):
-                            img_url = "G:/yasuo/" + files[randint(0, files.__len__() - 1)]
+                            img_url = "G:\yasuo\\" + files[randint(0, files.__len__() - 1)]
                             img_lst.append(img_url)
                     output['img_list'] = img_lst
 
@@ -185,13 +185,13 @@ def main(text):
                     else:
                         output['text'] = '输入有误！'
         elif text.endswith("kkp") or text.endswith("看看批"):
-            url = "G:/kkp"
+            url = "G:\\kkp"
             n = randint(0, 10)
             if n < 8:
                 output['text'] = "看你妈看"
             else:
                 for root, dirs, files in os.walk(url):
-                    img_url = "G:/kkp/" + files[randint(0, files.__len__() - 1)]
+                    img_url = "G:\\kkp\\" + files[randint(0, files.__len__() - 1)]
                     img_lst.append(img_url)
                 output['img_list'] = img_lst
         # 按tag搜寻:
