@@ -41,7 +41,7 @@ corgiNSFW_flask/
 装好该装的依赖   
 >flask  
 flask-sqlalchemy  
-requests    
+requests      
 
 然后运行 app.py
 
