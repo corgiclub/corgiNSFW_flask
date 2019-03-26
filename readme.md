@@ -38,7 +38,12 @@ corgiNSFW_flask/
 
 
 # 使用方法
-装好该装的依赖 把pixivpy3文件夹放到python库文件夹里去 然后运行 app.py
+装好该装的依赖   
+>flask  
+flask-sqlalchemy  
+requests    
+
+然后运行 app.py
 
 # 更新中...
 
