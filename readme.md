@@ -43,7 +43,8 @@ corgiNSFW_flask/
 flask-sqlalchemy  
 requests      
 
-然后运行 app.py
+然后运行 run.py
+>详细命令见flask文档(>0.10版本的)
 
 # 更新中...
 
