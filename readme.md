@@ -32,6 +32,7 @@
 # 项目结构
 corgiNSFW_flask/   
 &ensp;&ensp;&ensp;&ensp;img/    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;图片存储位置  
+&ensp;&ensp;&ensp;&ensp;dog_img/    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;狗群友聊天图片存储位置  
 &ensp;&ensp;&ensp;&ensp;pixivBot/  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;bot文件夹  
 &ensp;&ensp;&ensp;&ensp;pixivpy3/  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;爬p站的库  
 &ensp;&ensp;&ensp;&ensp;app.py &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;主程序  
@@ -44,7 +45,7 @@ flask-sqlalchemy
 requests      
 
 然后运行 run.py
->详细命令见flask文档(>0.10版本的)
+>详细命令见flask文档
 
 # 更新中...
 
