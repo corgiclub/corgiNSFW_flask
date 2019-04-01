@@ -37,9 +37,10 @@ corgiNSFW_flask/
 &ensp;&ensp;&ensp;&ensp;migrations/    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;数据库迁移文件  
 &ensp;&ensp;&ensp;&ensp;pixivBot/  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;bot文件夹  
 &ensp;&ensp;&ensp;&ensp;pixivpy3/  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;爬p站的库  
-&ensp;&ensp;&ensp;&ensp;settings/  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;配置文件  
+&ensp;&ensp;&ensp;&ensp;settings/  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;配置文件    
+&ensp;&ensp;&ensp;&ensp;-----------------   
 &ensp;&ensp;&ensp;&ensp;app.py &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;主程序  
-corpus.py &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;语料库  
+&ensp;&ensp;&ensp;&ensp;corpus.py &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;语料库  
 
 # 使用方法
 装好该装的依赖   
