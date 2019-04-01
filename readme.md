@@ -31,21 +31,28 @@
 
 # 项目结构
 corgiNSFW_flask/   
-&ensp;&ensp;&ensp;&ensp;img/    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;图片存储位置  
-&ensp;&ensp;&ensp;&ensp;dog_img/    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;狗群友聊天图片存储位置  
-&ensp;&ensp;&ensp;&ensp;pixivBot/  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;bot文件夹  
-&ensp;&ensp;&ensp;&ensp;pixivpy3/  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;爬p站的库  
-&ensp;&ensp;&ensp;&ensp;app.py &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;主程序  
-
+&ensp;&ensp;&ensp;&ensp;application/    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;应用扩展  
+&ensp;&ensp;&ensp;&ensp;dog_img/    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;狗群友聊天图片存储位置  
+&ensp;&ensp;&ensp;&ensp;img/    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;图片存储位置  
+&ensp;&ensp;&ensp;&ensp;migrations/    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;数据库迁移文件  
+&ensp;&ensp;&ensp;&ensp;pixivBot/  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;bot文件夹  
+&ensp;&ensp;&ensp;&ensp;pixivpy3/  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;爬p站的库  
+&ensp;&ensp;&ensp;&ensp;settings/  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;配置文件  
+&ensp;&ensp;&ensp;&ensp;app.py &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;主程序  
+corpus.py &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;语料库  
 
 # 使用方法
 装好该装的依赖   
 >flask  
 flask-sqlalchemy  
 requests      
+ntlk
 
-然后运行 run.py
->详细命令见flask文档
+然后运行 app.py
+>详细命令见flask文档  
+
+机器人指令介绍:  
+http://bot.corgiclub.tk
 
 # 更新中...
 

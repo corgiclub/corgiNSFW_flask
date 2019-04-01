@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
-from run import app
+from app import app
 WIN = sys.platform.startswith('win')
 if WIN:
     prefix = 'sqlite:///'
