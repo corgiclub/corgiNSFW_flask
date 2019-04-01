@@ -103,8 +103,6 @@ def index() -> make_response:
         #     questions = f.read().split("\n------\n")
         #     question = questions[randint(0, len(questions))]
         #     sdk.sendGroupMsg(msg.Group, question)
-    elif QMsg == "test":
-        sdk.sendGroupMsg(msg.Group, '<?xml version=\'1.0\' encoding=\'UTF-8\' standalone=\'yes\' ?><msg serviceID="2" templateID="1" action="web" brief="[分享] 秦皇岛" sourceMsgId="0" url="http://music.163.com/song/386835/?userid=81442834" flag="0" adverSign="0" multiMsgFlag="0"><item layout="2"><audio cover="https://url.cn/5f5OJq7" src="http://url.cn/5cYpTFH" /><title>秦皇岛</title><summary>万能青年旅店</summary></item><source name="网易云音乐" icon="https://url.cn/5EzO5jI" url="http://url.cn/5pl4kkd" action="app" a_actionData="com.netease.cloudmusic" i_actionData="tencent100495085://" appid="100495085" /></msg>http://music.163.com/song/386835/?userid=81442834')
 
     elif QMsg.startswith("来首"):
         index = QMsg.find("首")
@@ -202,10 +200,11 @@ def index() -> make_response:
             for record in SendWord.query.all():
                 if distance.edit_distance(record.word, rest_msg) < msg_len_limit // 3 + 1:
                     try:
-                        record = rest_msg.strip()
-                        word = SendWord(word=record)
-                        db.session.add(word)
-                        db.session.commit()
+                        a_record = rest_msg.strip()
+                        if record.word != a_record:
+                            word = SendWord(word=a_record)
+                            db.session.add(word)
+                            db.session.commit()
                     except:
                         pass
                     sdk.sendGroupMsg(msg.Group, SendWord.query.get(randint(1, SendWord.query.count())).word)
@@ -218,10 +217,11 @@ def index() -> make_response:
             for record in SendWord.query.all():
                 if distance.edit_distance(record.word, rest_msg) < msg_len_limit // 3 + 1:
                     try:
-                        record = rest_msg.strip()
-                        word = SendWord(word=record)
-                        db.session.add(word)
-                        db.session.commit()
+                        a_record = rest_msg.strip()
+                        if record.word != a_record:
+                            word = SendWord(word=a_record)
+                            db.session.add(word)
+                            db.session.commit()
                     except:
                         pass
                     sdk.sendGroupMsg(msg.Group, SendWord.query.get(randint(1, SendWord.query.count())).word)
@@ -233,10 +233,11 @@ def index() -> make_response:
         for record in SendWord.query.all():
             if record.word in QMsg:
                 try:
-                    record = rest_msg.strip()
-                    word = SendWord(word=record)
-                    db.session.add(word)
-                    db.session.commit()
+                    a_record = rest_msg.strip()
+                    if record.word != a_record:
+                        word = SendWord(word=a_record)
+                        db.session.add(word)
+                        db.session.commit()
                 except:
                     pass
                 sdk.sendGroupMsg(msg.Group, SendWord.query.get(randint(1, SendWord.query.count())).word)
