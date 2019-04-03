@@ -6,7 +6,7 @@ dic = {}
 count = 0
 
 
-def get_in(msg: str):
+def get_in(msg: str) -> str:
     global count
     count += 1
     if count > q.maxlen:
