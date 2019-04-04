@@ -16,7 +16,7 @@ import random as r
 import re
 import requests
 
-
+switch = True
 # 配置路由，在插件提交返回中配置地址（如本例 http://127.0.0.1:5000）
 # Create your views here.
 
@@ -55,6 +55,7 @@ def index() -> make_response:
     msg = sdk.getMsg()
     QMsg = msg.Msg
     print(msg)
+    print(QMsg)
 
     # 存数据库
     if msg.Group == "600302544":
@@ -92,9 +93,9 @@ def index() -> make_response:
     print(dic)
 
     # 5%概率复读
-    if randint(0, 100) > 95:
-        sdk.sendGroupMsg(msg.Group, QMsg)
-        return make_response(sdk.toJsonString())
+    # if randint(0, 100) > 95:
+    #     sdk.sendGroupMsg(msg.Group, QMsg)
+    #     return make_response(sdk.toJsonString())
 
     QMsg = QMsg.replace("那", "")
     if QMsg == "来道题":
@@ -108,7 +109,6 @@ def index() -> make_response:
         index = QMsg.find("首")
         music_name = QMsg[index + 1:]
         sdk.sendGroupMsg(msg.Group, "[ksust,music:name={}]".format(music_name))
-
     elif "天气" in QMsg and ("样" in QMsg or "如何" in QMsg):
         QMsg = QMsg.replace("那", "")
         index = QMsg.find("天气")
@@ -193,60 +193,15 @@ def index() -> make_response:
         if pattern == QMsg:
             sdk.sendGroupMsg(msg.Group, "@我干啥")
             return make_response(sdk.toJsonString())
-        rest_msg = QMsg.replace(pattern, "")
-        msg_len = len(rest_msg)
-        msg_len_limit = 8
-        if msg_len > msg_len_limit:
-            for record in SendWord.query.all():
-                if distance.edit_distance(record.word, rest_msg) < msg_len_limit // 3 + 1:
-                    try:
-                        a_record = rest_msg.strip()
-                        if record.word != a_record:
-                            word = SendWord(word=a_record)
-                            db.session.add(word)
-                            db.session.commit()
-                    except:
-                        pass
-                    sdk.sendGroupMsg(msg.Group, SendWord.query.get(randint(1, SendWord.query.count())).word)
-                    if randint(0, 100) > 60:
-                        sdk.sendGroupMsg(msg.Group, SendWord.query.get(randint(1, SendWord.query.count())).word)
-                    if randint(0, 100) > 90:
-                        sdk.sendGroupMsg(msg.Group, SendWord.query.get(randint(1, SendWord.query.count())).word)
-                    return make_response(sdk.toJsonString())
-        if msg_len > msg_len_limit / 2:
-            for record in SendWord.query.all():
-                if distance.edit_distance(record.word, rest_msg) < msg_len_limit // 3 + 1:
-                    try:
-                        a_record = rest_msg.strip()
-                        if record.word != a_record:
-                            word = SendWord(word=a_record)
-                            db.session.add(word)
-                            db.session.commit()
-                    except:
-                        pass
-                    sdk.sendGroupMsg(msg.Group, SendWord.query.get(randint(1, SendWord.query.count())).word)
-                    if randint(0, 100) > 60:
-                        sdk.sendGroupMsg(msg.Group, SendWord.query.get(randint(1, SendWord.query.count())).word)
-                    if randint(0, 100) > 90:
-                        sdk.sendGroupMsg(msg.Group, SendWord.query.get(randint(1, SendWord.query.count())).word)
-                    return make_response(sdk.toJsonString())
         for record in SendWord.query.all():
             if record.word in QMsg:
-                try:
-                    a_record = rest_msg.strip()
-                    if record.word != a_record:
-                        word = SendWord(word=a_record)
-                        db.session.add(word)
-                        db.session.commit()
-                except:
-                    pass
                 sdk.sendGroupMsg(msg.Group, SendWord.query.get(randint(1, SendWord.query.count())).word)
                 if randint(0, 100) > 60:
                     sdk.sendGroupMsg(msg.Group, SendWord.query.get(randint(1, SendWord.query.count())).word)
                 if randint(0, 100) > 90:
                     sdk.sendGroupMsg(msg.Group, SendWord.query.get(randint(1, SendWord.query.count())).word)
                 return make_response(sdk.toJsonString())
-        record = rest_msg.strip()
+        record = QMsg.replace(pattern, "").strip()
         word = SendWord(word=record)
         db.session.add(word)
         db.session.commit()
