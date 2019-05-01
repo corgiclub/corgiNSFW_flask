@@ -30,6 +30,15 @@
         app.run()
 
 # 项目结构
+    
+    ┌corgiNSFW_flask
+    ├── static  
+    │   ├── assets  
+    │   └── todos.js
+    ├── templates
+    │   └── todo.html
+    └── tori.py
+
 corgiNSFW_flask/   
 &ensp;&ensp;&ensp;&ensp;application/    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;应用扩展  
 &ensp;&ensp;&ensp;&ensp;dog_img/    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;狗群友聊天图片存储位置  
